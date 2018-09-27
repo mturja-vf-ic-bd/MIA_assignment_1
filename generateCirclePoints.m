@@ -1,8 +1,7 @@
-function points = generateCirclePoints(I, circle, sigma, res)
+function points = generateCirclePoints(m, n, circle, sigma, res)
     cy = circle(1);
     cx = circle(2);
     rad = circle(3);
-    [m, n] = size(I);
     r = floor(rad/sqrt(2)); %r is not rad.
     points1 = [];
     points2 = [];
