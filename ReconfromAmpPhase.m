@@ -18,14 +18,16 @@ outputimage = mag(1,1)*ones( N, N )+...
 outputimage = outputimage / scale;
 
 for k2 = 2:N/2
+    disp(k2/(N/2 - 1) * 100);
     for k1 = N/2+2:N
         outputimage = outputimage + mag(k2,k1)*cos( 2*pi*( (k1-1)*(x_mtx-1)+(k2-1)*(y_mtx-1))/N - phase(k2,k1) )/(scale) ;
     end
 end
 
 for k2 = 1:N/2+1
+    disp(k2/(N/2 + 1) * 100);
     for k1 = 2:N/2
-        outputimage = outputimage + mag(k2,k1)*cos( 2*pi*( (k1-1)*(x_mtx-1)+(k2-1)*(y_mtx-1))/N - phase(k2,k1) )/(scale) ;
+        outputimage = outputimage + mag(k2,k1)*cos( 2*pi*( (k1-1)*(x_mtx-1)+(k2-1)*(y_mtx-1))/N - phase(k2,k1) )/(scale);
     end
 end
 

@@ -5,10 +5,10 @@ function acc = accumulate(Img, voters, weights, rad)
     [m, n] = size(Img);
     acc = zeros(m, n);
     i = 1;
-    for voter = voters
+    for voter = voters'
         probable_points = generateCirclePoints(Img, [voter; rad], 0, 1)';
         for pp = probable_points
-            acc(pp(1), pp(2)) = acc(pp(1), pp(2)) + weights(i);
+            acc(pp(1, 1), pp(2, 1)) = acc(pp(1, 1), pp(2, 1)) + weights(i, 1);
         end
         i = i + 1;
     end
